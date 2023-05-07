@@ -1,0 +1,10 @@
+<h1><%= @technology.name %></h1>
+
+<%= link_to "Back to show", technologies_path %>
+
+<%= link_to "Edit", edit_technology_path %>
+
+<%= link_to "Delete",
+  technology_path(@technology),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
