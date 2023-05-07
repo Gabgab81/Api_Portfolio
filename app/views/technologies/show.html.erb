@@ -1,6 +1,12 @@
 <h1><%= @technology.name %></h1>
 
-<%= link_to "Back to show", technologies_path %>
+<% if !@technology.icon.key.nil? %>
+  <%= cl_image_tag @technology.icon.key %>
+<% else %>
+  <p>No icon available</p>
+<% end %>
+<p></p>
+<%= link_to "Back to index", technologies_path %>
 
 <%= link_to "Edit", edit_technology_path %>
 
