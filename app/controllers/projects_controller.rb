@@ -50,7 +50,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :description, :code, :figma)
+    params.require(:project).permit(:name, :description, :code, :figma, :image, :db)
   end
 
   def set_project
