@@ -1,5 +1,7 @@
 class Project < ApplicationRecord
   belongs_to :user
+  has_one_attached :image
+  has_one_attached :db
 
   validates :name, presence: true
   validates :description, presence: true
