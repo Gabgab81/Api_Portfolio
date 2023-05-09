@@ -1,0 +1,23 @@
+<h1><%= @project.name %></h1>
+
+<p>Description: <%= @project.description %></p>
+<p>Github: <%= @project.code %></p>
+<a href= <%= @project.code %> alt="link github" target="_blank" >Github</a>
+<p>figma: <%= @project.figma %></p>
+
+<% if false %>
+  <% if !@project.icon.key.nil? %>
+    <%= cl_image_tag @project.icon.key %>
+  <% else %>
+    <p>No icon available</p>
+  <% end %>
+<% end %>
+<p></p>
+<%= link_to "Back to index", projects_path %>
+
+<%= link_to "Edit", edit_project_path %>
+
+<%= link_to "Delete",
+  project_path(@project),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%> 
