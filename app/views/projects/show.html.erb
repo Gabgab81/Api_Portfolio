@@ -20,6 +20,24 @@
   <p>No db available</p>
 <% end %>
 
+<h2>All your technologies</h2>
+
+<% if @tech_projects.empty? %>
+  <p>You don't have any technology yet</p>
+<% else %>
+  <ul>
+    <% @tech_projects.each do |tech_project| %>
+      <%= tech_project.technology.name %>
+      <%= link_to "Delete",
+          project_tech_project_path(@project, tech_project),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %> 
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to "Add a technology", new_project_tech_project_path(@project) %>
+
 <p></p>
 <%= link_to "Back to index", projects_path %>
 

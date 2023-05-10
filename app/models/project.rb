@@ -1,5 +1,7 @@
 class Project < ApplicationRecord
   belongs_to :user
+  has_many :techProjects, dependent: :destroy
+  
   has_one_attached :image
   has_one_attached :db
 
