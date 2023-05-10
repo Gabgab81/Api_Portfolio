@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     resources :tech_projects, only: [:new, :create, :destroy]
   end
 
-  # resources :tech_projects, only: :destroy
+  resources :experiences
 end

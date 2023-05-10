@@ -1,0 +1,23 @@
+<h1> <%= @experience.title %> </h1>
+<p>Compagny name: <%= @experience.compagny_name %></p>
+<p>Description: <%= @experience.description %></p>
+<p>Date: <%= @experience.date %></p>
+<p></p>
+<% if @experience.logo.key.nil? %>
+  <p>No logo</p>
+<% else %>
+  <%= cl_image_tag @experience.logo.key, height: 30, width: 40, crop: :fill %>
+<% end %>
+
+<p></p>
+
+<%= link_to "Back to index", experiences_path %>
+<p></p>
+ <%= link_to "Edit", edit_experience_path(@experience) %>
+<p></p>
+<%= link_to "Delete",
+  experience_path(@experience),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%> 
+  
+  
