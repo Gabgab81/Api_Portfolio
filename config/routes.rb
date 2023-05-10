@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :technologies
-  resources :projects
+  resources :projects do
+    resources :tech_projects, only: [:new, :create, :destroy]
+  end
+
+  # resources :tech_projects, only: :destroy
 end

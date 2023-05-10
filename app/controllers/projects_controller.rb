@@ -25,6 +25,7 @@ class ProjectsController < ApplicationController
 
   def show
     authorize @project
+    @tech_projects = @project.techProjects
   end
 
   def edit
