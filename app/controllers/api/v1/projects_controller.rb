@@ -10,29 +10,29 @@ class Api::V1::ProjectsController < Api::V1::BaseController
   def show
   end
 
-  def update
-    if @project.update(project_params)
-      render :show, status: :updated
-    else
-      render_error
-    end
-  end
+  # def update
+  #   if @project.update(project_params)
+  #     render :show, status: :updated
+  #   else
+  #     render_error
+  #   end
+  # end
 
-  def create
-    @project = Project.new(project_params)
-    @project.user = current_user
-    authorize @project
-    if @project.save
-      render :show, status: :created
-    else 
-      render_error
-    end
-  end
+  # def create
+  #   @project = Project.new(project_params)
+  #   @project.user = current_user
+  #   authorize @project
+  #   if @project.save
+  #     render :show, status: :created
+  #   else 
+  #     render_error
+  #   end
+  # end
 
-  def destroy
-    @project.destroy
-    head :no_content
-  end
+  # def destroy
+  #   @project.destroy
+  #   head :no_content
+  # end
 
   private
 
