@@ -3,17 +3,19 @@ class ProjectPolicy < ApplicationPolicy
     # NOTE: Be explicit about which records you allow access to!
     def resolve
       scope.where(user: user)
+      # scope.all
     end
 
   end
 
   def show?
     record.user == user
+    # true
   end
   
   def create?
     # record.user == user
-    true
+    !user.nil?
   end
 
   def update?
@@ -21,6 +23,7 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    # record.user == user
+    update?
   end
 end
