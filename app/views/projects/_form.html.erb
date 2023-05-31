@@ -1,9 +1,12 @@
 <%= simple_form_for(project) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
+  <%= f.input :address %>
   <%= f.input :code %>
   <%= f.input :figma %>
   <%= f.input :image, as: :file %>
   <%= f.input :db, as: :file %>
   <%= f.submit %>
 <% end %>
+
+<%= link_to "Back to index", projects_path %>
