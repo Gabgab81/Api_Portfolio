@@ -1,0 +1,18 @@
+<h1><%= @service.title %></h1>
+
+<% if false %>
+<% if !@service.icon.key.nil? %>
+  <%= cl_image_tag @service.icon.key %>
+<% else %>
+  <p>No icon available</p>
+<% end %>
+<% end %>
+<p></p>
+<%= link_to "Back to index", services_path %>
+
+<%= link_to "Edit", edit_service_path %>
+
+<%= link_to "Delete",
+  service_path(@service),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>  

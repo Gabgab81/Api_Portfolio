@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :technologies, dependent: :destroy
   has_many :projects, dependent: :destroy
   has_many :experiences, dependent: :destroy
+  has_many :services, dependent: :destroy
 end
