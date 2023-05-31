@@ -1,12 +1,11 @@
 <h1><%= @service.title %></h1>
 
-<% if false %>
 <% if !@service.icon.key.nil? %>
   <%= cl_image_tag @service.icon.key %>
 <% else %>
   <p>No icon available</p>
 <% end %>
-<% end %>
+
 <p></p>
 <%= link_to "Back to index", services_path %>
 
