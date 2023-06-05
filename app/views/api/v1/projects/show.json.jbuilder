@@ -1,4 +1,4 @@
-json.extract! @project, :id, :name, :description
+json.extract! @project, :id, :name, :description, :code, :figma, :address
 json.techProjects @project.techProjects do |techProject|
   # json.extract! techProject, :id, :technology_id, :project_id
   json.technology do
