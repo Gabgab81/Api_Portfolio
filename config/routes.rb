@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :projects do
     resources :tech_projects, only: [:new, :create, :destroy]
   end
+  resources :contacts
 
   resources :experiences
 
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
       resources :technologies, only: [ :index ]
       resources :experiences, only: [ :index, :show ]
       resources :services, only:[ :index ]
+      resources :contacts, only:[ :create ]
     end
   end
 end

@@ -1,0 +1,8 @@
+<%= simple_form_for(contact) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :message %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Back to index", contacts_path %>
