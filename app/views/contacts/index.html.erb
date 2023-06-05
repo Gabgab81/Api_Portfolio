@@ -1,0 +1,16 @@
+<h1>All your contacts</h1>
+
+<% if @contacts.empty? %>
+  <p>You don't have any contact yet</p>
+<% else %>
+  <ul>
+    <% @contacts.each do |contact| %>
+      <li>
+          <h2><%= contact.name %></h2>
+          <p><%= contact.email %></p>
+          <p><%= contact.message %></p>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<%= link_to "Create new contact", new_contact_path %>
