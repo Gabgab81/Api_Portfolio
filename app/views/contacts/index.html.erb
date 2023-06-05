@@ -9,6 +9,11 @@
           <h2><%= contact.name %></h2>
           <p><%= contact.email %></p>
           <p><%= contact.message %></p>
+          <%= link_to "Delete",
+            contact_path(contact),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+          %> 
+          <p></p>
       </li>
     <% end %>
   </ul>
